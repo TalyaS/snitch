@@ -1,0 +1,16 @@
+<section id="add">
+  <form action="/" method="post">
+    <textarea name="content" placeholder="Your snitch&hellip;"></textarea>
+    <input type="submit" value="Add a Snitch!">
+  </form>
+</section>
+ 
+<% @snitches.each do |snitch| %>
+  <article>
+    <p>
+      <%= snitch.content %>
+      <span><a href="/<%= snitch.id %>">[edit]</a></span>
+    </p>
+    <p class="meta">Created: <%= snitch.created_at %></p>
+  </article>
+<% end %>
