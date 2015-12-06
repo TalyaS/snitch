@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require reqwest
 //= require reflux
 //= require components
 //= require jquery

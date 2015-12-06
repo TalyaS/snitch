@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'snitch/new'
+  # get 'snitches/new'
 
-  get 'snitch/index' do
-    @snitches = Snitch.all order: :id.desc
-    @title = 'All Snitches'
-    erb :temp
-  end
+  # get 'snitches/index' do
+  #   @snitches = Snitch.all order: :id.desc
+  #   @title = 'All Snitches'
+  #   erb :temp
+  # end
 
   resource :snitches, only: [:new, :create, :show]
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'snitch#index'
+  root 'snitches#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
