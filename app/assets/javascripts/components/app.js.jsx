@@ -1,17 +1,12 @@
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = SnitchStore.getInitialState();
+  }
   render() {
     return (
       <div>
-        <Snitches snitches={
-          [
-            {
-              content: "I love horses best of all the animals"
-            },
-            {
-              content: "I love horses, they're my friends"
-            }
-          ]
-        }/>
+        <SnitchList snitches={this.state.snitches}/>
       </div>
       );
   }

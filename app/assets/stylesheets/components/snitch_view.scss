@@ -1,0 +1,12 @@
+.snitch-view {
+  &__body {
+    border: 0;
+    display: block;
+    font-family: inherit;
+    font-size: 18px;
+    min-height: 50px;
+    outline: none;
+    padding: 0 30px;
+    width: 80%;
+  }
+}
