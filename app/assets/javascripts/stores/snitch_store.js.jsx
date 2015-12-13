@@ -28,7 +28,6 @@ const Store = Reflux.createStore({
       type: 'json',
       method: 'get',
       success: (response) => {
-        debugger;
         this.trigger(response);
       }
     })
