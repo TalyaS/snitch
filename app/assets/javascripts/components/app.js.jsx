@@ -4,10 +4,11 @@ class App extends React.Component {
     this.state = Store.getInitialState();
     Store.listen( snitches => this.setState({snitches: snitches}));
   }
+
   render() {
     return (
       <div>
-        <button className="btn btn-danger" onClick={ () => actions.addSnitch({ content: "shoop shoop" }) }>shoop</button>
+        <AddSnitch />
         <SnitchList snitches={this.state.snitches}/>
       </div>
     );
