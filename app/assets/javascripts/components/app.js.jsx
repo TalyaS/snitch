@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <AddSnitch />
+        <NavigationBar />
         <SnitchList snitches={this.state.snitches}/>
       </div>
     );
