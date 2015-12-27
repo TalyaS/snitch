@@ -1,7 +1,15 @@
-== README
+# Snitch
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
+
+## Setup
+
+Snitch uses bower-rails as browser-related package manager (and bundler for server-related package manager). 
+To add a browser-related dependency, add it to bower.json and run:
+
+    rake bower:install
+
 
 Things you may want to cover:
 
