@@ -6,6 +6,7 @@ class AddSnitch extends React.Component {
 
   addSnitch() {
     actions.addSnitch({ content: this.state.newSnitchContent });
+    this.setNewContent("");
   }
 
   cancelAddSnitch() {
