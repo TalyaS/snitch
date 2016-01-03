@@ -16,6 +16,7 @@ class AddSnitch extends React.Component {
           <Modal.Body>
             <div>
               <textarea className="form-control"
+                autoFocus
                 value={this.state.newSnitchContent}
                 onChange={ (event) => this.setState({newSnitchContent: event.target.value}) }>
               </textarea>
