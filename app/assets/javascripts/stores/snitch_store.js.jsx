@@ -1,4 +1,5 @@
 const actions = Reflux.createActions([
+  "toggleShowAddSnitch",
   "addSnitch",
   "refreshSnitches"
 ]);
@@ -7,7 +8,10 @@ const Store = Reflux.createStore({
   listenables: actions,
 
   getInitialState: function(){
-    return this.data = initialData;
+    return this.data = {
+      snitches: initialData.snitches,
+      showAddSnitch: false
+    };
   },
 
   onAddSnitch: function(newSnitch){
@@ -17,6 +21,7 @@ const Store = Reflux.createStore({
       method: 'post',
       data: {content: newSnitch.content},
       success: (response) => {
+        this.data.showAddSnitch = false;
         this.onRefreshSnitches();
       }
     })
@@ -28,8 +33,14 @@ const Store = Reflux.createStore({
       type: 'json',
       method: 'get',
       success: (response) => {
-        this.trigger(response);
+        this.data.snitches = response;
+        this.trigger(this.data);
       }
     })
+  },
+
+  onToggleShowAddSnitch: function(showAddSnitch){
+    this.data.showAddSnitch = showAddSnitch;
+    this.trigger(this.data);
   }
 });

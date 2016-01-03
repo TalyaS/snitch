@@ -1,28 +1,33 @@
 class NavigationBar extends React.Component {
+
+  showAddSnitch() {
+    actions.toggleShowAddSnitch(true);
+  }
+
   render() {
     return (
       <nav className="navbar navbar-fixed-top" role="navigation">
         <div className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
           <li>
-            <a href="#">
+            <a id="logo" href="#">
               LOGO
             </a>
           </li>
           <li>
-            <a href="#">
+            <a id="add-snitch" href="#" onClick={() => this.showAddSnitch() }>
               <i className="fa fa-pencil-square-o fa-3x"></i>
             </a>
           </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li>
-            <a href="#">
+            <a id="account" href="#">
               <i className="fa fa-child fa-3x"></i>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a id="sign-out" href="#">
               <i className="fa fa-sign-out fa-3x"></i>
             </a>
           </li>

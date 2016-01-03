@@ -12,12 +12,17 @@ class AddSnitch extends React.Component {
   render() {
     return (
       <div>
-        <textarea 
-          className="form-control"
-          value={this.state.newSnitchContent}
-          onChange={ (event) => this.setState({newSnitchContent: event.target.value}) }>
-        </textarea>
-        <button className="btn btn-primary btn-add-new-snitch" onClick={ () => this.addSnitch() }>Snitch it</button>
+        <Modal show={ this.props.show }>
+          <Modal.Body>
+            <div>
+              <textarea className="form-control"
+                value={this.state.newSnitchContent}
+                onChange={ (event) => this.setState({newSnitchContent: event.target.value}) }>
+              </textarea>
+              <button className="btn btn-primary btn-add-new-snitch" onClick={ () => this.addSnitch() }>Snitch it</button>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
     );
   }
