@@ -1,5 +1,5 @@
 const actions = Reflux.createActions([
-  "toggleShowAddSnitch",
+  "showAddSnitch",
   "addSnitch",
   "refreshSnitches"
 ]);
@@ -39,8 +39,8 @@ const Store = Reflux.createStore({
     })
   },
 
-  onToggleShowAddSnitch: function(showAddSnitch){
-    this.data.showAddSnitch = showAddSnitch;
+  onShowAddSnitch: function(){
+    this.data.showAddSnitch = true;
     this.trigger(this.data);
   }
 });
