@@ -1,6 +1,6 @@
 class NavigationBar extends React.Component {
   showAddSnitch() {
-    actions.showAddSnitch();
+    actions.toggleShowAddSnitch(true);
   }
 
   render() {
