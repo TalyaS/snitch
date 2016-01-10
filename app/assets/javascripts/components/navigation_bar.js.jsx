@@ -2,6 +2,12 @@ class NavigationBar extends React.Component {
   showAddSnitch() {
     actions.toggleShowAddSnitch(true);
   }
+  signOut() {
+    auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
 
   render() {
     return (
@@ -26,7 +32,7 @@ class NavigationBar extends React.Component {
             </a>
           </li>
           <li>
-            <a id="sign-out" href="#">
+            <a id="sign-out" href="#" onClick={() => this.signOut()}>
               <i className="fa fa-sign-out fa-3x"></i>
             </a>
           </li>
