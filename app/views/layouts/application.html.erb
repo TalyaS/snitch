@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/api:client.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.27.3/react-bootstrap.min.js"></script>
@@ -16,6 +17,19 @@
     var Modal = ReactBootstrap.Modal;
     var Button = ReactBootstrap.Button;
     var Panel = ReactBootstrap.Panel;
+  </script>
+   <script>
+    var auth2;
+
+    gapi.load('auth2', function(){
+      auth2 = gapi.auth2.init({ client_id: '59196986891-gb23akrhp1jlis7m8h4hpt5nghfci9eo.apps.googleusercontent.com' });
+      auth2.then(signinChanged);
+    });
+
+    function signinChanged(){
+      var signedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
+      console.log("Signed in: " + signedIn);
+    }
   </script>
 </head>
 <body>
