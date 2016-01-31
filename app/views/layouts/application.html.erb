@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderLoginButton" async defer></script>
   <script src="https://apis.google.com/js/api:client.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js"></script>
@@ -36,7 +36,6 @@
   </script>
 </head>
 <body>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <script>
     function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
@@ -58,5 +57,17 @@
 
   <%= yield %>
 
+  <script type="text/javascript">
+    function renderLoginButton() {
+      gapi.signin2.render('google-signin-button', {
+        'scope': 'https://www.googleapis.com/auth/plus.login',
+        'width': 200,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': 'onSignIn'
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 .signin {
   text-align: center;
 
+  #google-signin-button {
+    display: inline-block;
+    margin: 50px;
+  }
+
   h1 {
     font-size: 100px;
     color: #bea196;
