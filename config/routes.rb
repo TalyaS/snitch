@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resource :snitches, only: [:new, :create, :show]
+  resources :snitches, only: [:new, :create, :index]
 
-  root 'snitches#index'
+  root 'users#signin'
 
-  post "users/log_in", to: 'users#log_in'
+  get "signin", to: "users#signin"
+  post "log_in", to: 'users#log_in'
 end

@@ -28,7 +28,10 @@
 
     function signinChanged(){
       var signedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
-      console.log("Signed in: " + signedIn);
+
+      if(signedIn == false && window.location.pathname != '/signin') {
+        window.location = 'signin'
+      }
     }
   </script>
 </head>
@@ -46,6 +49,10 @@
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
+
+      if(window.location.pathname != '/snitches'){
+        window.location = 'snitches'
+      }
     };
   </script>
 
